@@ -67,14 +67,17 @@
 
   <p class="price-note">Starter sites begin at $750. Full builds quoted based on depth.</p> <br>
 
-  <form class="inquiry-form">
+  <form name="contact" method="POST" netlify class="inquiry-form">
+    <input type="hidden" name="form-name" value="contact">
+    
     <div class="form-grid">
-      <input type="text" class="form-input" placeholder="Your Name" required>
-      <input type="email" class="form-input" placeholder="Your Email" required>
+      <input type="text" class="form-input" name="name" placeholder="Your Name" required>
+      <input type="email" class="form-input" name="email" placeholder="Your Email" required>
     </div>
-    <textarea class="form-input" placeholder="What do you need built?" rows="5" required></textarea>
+    <textarea class="form-input" name="message" placeholder="What do you need built?" rows="5" required></textarea>
     <button type="submit" class="form-submit">Submit Inquiry</button>
   </form>
+  
 
   <p class="form-note">* You’ll get a response within 24–48 hours.</p>
 </section>
