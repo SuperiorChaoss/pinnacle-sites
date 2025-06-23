@@ -1,165 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H8CN5J5FDV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  
-  gtag('config', 'G-H8CN5J5FDV');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Pinnacle Sites</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Montserrat as in your first mockup -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <span>Pinnacle Sites</span>
-  </div>
-</header>
+<!-- in <nav>…</nav>, add a hamburger button -->
+<nav class="navbar">
+  <div class="logo">PINNACLE SITES</div>
 
+  <!-- MOBILE TOGGLE -->
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>  
+
+  <!-- HERO -->
 <section class="hero">
-  <h1>Websites That Convert. Design That Builds Trust.</h1>
-  <p>I build quiet, conversion-driven websites that filter time-wasters, close cleanly, and move with presence—not noise. Clean. Mobile-first. Built in 7 days</p>
-  <a href="#contact" class="cta-btn">Start Build</a>
-</section>
-<!--Pricing-->
-<section id="offers" class="full-width-offers">
-  <div>
-    <div style="text-align: center; margin-bottom: 60px;">
-      <h2>What I Build</h2>
-      <p>No fluff. Just clean, fast builds—designed to convert.</p>
-    </div>
+  <!-- Two-line headline -->
+  <h1>
+    You Don’t Need Another Website. <br/>
+    You Need Infrastructure.
+  </h1>
 
-    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+  <!-- Single subhead paragraph -->
+  <p class="subhead">
+    We build systems for high-performing brands—sites, booking flows, virtual teams, and scalable backend tools.
+  </p>
 
-      <!-- Starter Site -->
-      <div class="offer-box">
-        <h3>Starter Site</h3>
-        <p class="price">$750</p>
-        <ul>
-          <li>• Up to 2 custom pages (Home + Contact or Booking)</li>
-          <li>• Mobile-first responsive layout</li>
-          <li>• Lightweight, clean design</li>
-          <li>• Contact form or booking link integration</li>
-          <li>• Delivered in 7 days</li>
-          <li>• 1 revision round</li>
-        </ul>
-        <a href="#contact">Book This Build</a>
-      </div>
-
-      <!-- Full Website -->
-      <div class="offer-box">
-        <span class="badge">Most Popular</span>
-        <h3>Full Website</h3>
-        <p class="price">$2,000</p>
-        <ul>
-          <li>• 4–5 custom pages (e.g. Home, About, Services, Testimonials, Contact)</li>
-          <li>• Mobile-first, branded layout</li>
-          <li>• Service and testimonial sections</li>
-          <li>• Booking or contact system creation</li>
-          <li>• SEO-ready structure (titles + layout)</li>
-          <li>• Delivered in 7–10 days</li>
-          <li>• 2 revision rounds</li>
-        </ul>
-        <a href="#contact">Book This Build</a>
-      </div>
-
-      <!-- Full Stack Build -->
-      <div class="offer-box">
-        <h3>Full Stack Build</h3>
-        <p class="price">$3,000+</p>
-        <ul>
-          <li>• Full site + branded layout (5+ pages)</li>
-          <li>• Sales or booking flow integration/creation</li>
-          <li>• Automation-ready setup (lead capture, scheduling, etc.)</li>
-          <li>• Funnel landing page + follow-up structure</li>
-          <li>• Mobile-first design + SEO-structured layout</li>
-          <li>• Delivered in 10–14 days </li>
-          <li>• 3 revision rounds</li>
-        </ul>
-        <a href="#contact">Book This Build</a>
-      </div>
-
-    </div>
+  <!-- 3-panel carousel -->
+  <div class="hero-preview">
+    <div class="preview-carousel"></div>
+        <!-- DOT INDICATORS -->
+    <div class="carousel-indicators"></div>
   </div>
-</section>
-<!--Pricing-->
-<!--Compare-->
 
-<!--Compare-->
-<section class="about">
-  <h2 class="about-title">Clarity That Converts</h2>
-  <p class="about-subtitle">The Standard, Not the Exception.</p>
-
-  <p>I don’t build flashy sites. I build clean, conversion-focused systems.</p>
-  <p>Whether you’re booking clients or selling products—my pages are designed to keep attention locked and outcomes consistent.</p>
-  <p class="proof">This isn’t theory. These frameworks have helped clients double inquiries and book cleaner, faster.</p>
-
-  <div class="divider"></div>
-
-  <p class="small-reassure">Structure isn’t just for agencies—it works for coaches, stylists, and solo founders who value clean results over clutter.</p>
-
-  <div class="pillars">
-    <div class="pillar">
-      <h3>Speed</h3>
-      <p>Built fast. Launched clean. No drag, no dead ends.</p>
-    </div>
-    <div class="pillar">
-      <h3>Structure</h3>
-      <p>Every section has a reason. Every action leads forward.</p>
-    </div>
-    <div class="pillar">
-      <h3>Simplicity</h3>
-      <p>Minimal words. Maximum weight. Nothing extra.</p>
-    </div>
+  <!-- Single CTA -->
+  <div class="cta">
+    <a href="#start" class="btn primary">Start Build</a>
   </div>
 </section>
 
-<section class="example">
-  <h2 class="section-glimpse">A Glimpse Into the Standard</h2>
-  <p class="section-subtext">No flashy carousels. Just one real build—focused, fast, and structured for results.</p>
-  <p class="section-subtext">Whether it’s a booking page, product site, or full-stack presence—I build outcomes, not templates.</p>
+<!--Pain Points-->
+<section class="pain-points" id="why-plateau">
 
-  <div class="example-preview">
-    <a href="https://tropicalretreat.netlify.app/" target="_blank" class="preview-frame">
-      <div class="preview-label">Live Preview</div>
-      <img src="images/trop.png" alt="Preview Screenshot">
-    </a>
+  <!-- Background Image Wrapper -->
+  <div class="bg-wrapper">
+    <img
+      src="images/silky.png"
+      alt=""
+      aria-hidden="true"
+      class="section-bg"
+    />
+  </div>
+
+  <!-- Headline + question -->
+  <h2 class="section-title">
+    Are you letting leads slip through your fingers?
+  </h2>
+  <p class="question">
+    What if every missed message today cost you real dollars tomorrow?
+  </p>
+
+
+
+  <!-- Pain-point cards -->
+<div class="points-grid">
+  <div class="point">
+    <h3>No Structure</h3>
+    <p>Your content’s scattered—no sequence, no system.</p>
+  </div>
+
+  <div class="point">
+
+    <h3>You’re Doing It All</h3>
+    <p>No delegation means no leverage. You’re stuck in the weeds.</p>
+  </div>
+
+  <div class="point">
+    <h3>Lost Momentum</h3>
+    <p>Every delay chips away at your credibility and cash flow.</p>
+  </div>
+</div>
+  <p class="question">
+    Every missed message today will cost you real dollars tomorrow.
+  </p>
+
+  <!-- Calculator -->
+  <div class="calculator">
+    <label>
+      <span>Input Your Average Sale Value →</span>
+      <input id="avgSale" type="number" min="0" value="80"/>
+    </label>
+    <label>
+      <span>Input Your Missed Inquiries →</span>
+      <input id="missedLeads" type="number" min="0" value="10"/>
+    </label>
+    <div class="result">
+      Potential weekly loss: <strong id="loss">$0</strong>
+    </div>
+  </div>
+
+
+  <!-- Closing call-out + CTA -->
+  <p class="closing-line">
+    “Nothing changes if nothing changes. Ready to seal the leaks in your pipeline?”
+  </p>
+  <div class="cta">
+    <a href="#start" class="btn">Seal My Pipeline</a>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2 class="section-glimpse">Begin With Precision</h2>
-  <p class="section-subtext">No fluff, no vague inquiries. Tell me exactly what you need—I’ll build it lean, fast, and clean.</p>
+<section class="pinnacle-systems" id="pinnacle-systems">
+  <div class="container">
+    <h2 class="section-title">Pinnacle Systems</h2>
+    <p class="tagline">
+      You don’t need another website. You need structure that performs.
+    </p>
 
-  <p class="price-note">Starter sites begin at $750. Full builds quoted based on depth.</p> <br>
+    <div class="systems-grid">
+  <!-- Foundation Build -->
+  <div class="card">
+    <h3 class="card-title">Foundation Build</h3>
+    <p class="price">$750</p>
+    <ul class="features">
+      <li>Conversion-Driven Homepage – Built to capture attention in 3 seconds or less.</li>
+      <li>Booking Flow – Frictionless self-scheduling system that turns visits into leads.</li>
+      <li>7-Day Delivery with 1 round of revisions.</li>
+    </ul>
+    <p class="card-note">
+      Perfect for solopreneurs or startups needing credibility and clarity—fast.
+    </p>
+    <a href="#start" class="btn card-cta">Book This Build</a>
+    <a href="#learn-foundation" class="btn learn-more">Learn More</a>
+  </div>
 
-  <form name="contact" method="POST" netlify class="inquiry-form">
-    <input type="hidden" name="form-name" value="contact">
-    
-    <div class="form-grid">
-      <input type="text" class="form-input" name="name" placeholder="Your Name" required>
-      <input type="email" class="form-input" name="email" placeholder="Your Email" required>
-      <input type="hidden" name="redirect" value="/thank-you.html">
+  <!-- Core System -->
+  <div class="card popular">
+    <span class="badge">Most Popular</span>
+    <h3 class="card-title">Core System</h3>
+    <p class="price">$2,000</p>
+    <ul class="features">
+      <li>Full Website Build – Strategic layout with clear buyer flow.</li>
+      <li>Automated Booking System – Integrated calendar to lock in leads while you sleep.</li>
+      <li>VA Setup Access – Connect with trained virtual assistants at $8/hr.</li>
+      <li>Content Grid Templates – Branded social media & caption prompts.</li>
+      <li>7–10 Day Delivery with 2 rounds of revisions.</li>
+    </ul>
+    <p class="card-note">
+      For creators or coaches ready to upgrade from hustle to structure.
+    </p>
+    <a href="#start" class="btn card-cta">Book This Build</a>
+    <a href="#learn-core" class="btn learn-more">Learn More</a>
+  </div>
+
+  <!-- Pinnacle Stack -->
+  <div class="card">
+    <h3 class="card-title">Pinnacle Stack</h3>
+    <p class="price">$3,000+</p>
+    <ul class="features">
+      <li>Complete Brand System – Scalable website with structure built for growth.</li>
+      <li>Smart Booking & Pipeline – End-to-end lead capture with automated follow-ups.</li>
+      <li>VA Infrastructure – Delegation system mapped and ready.</li>
+      <li>Content + Blog Templates – Brand-aligned visuals & copy formats.</li>
+      <li>Marketing Collateral – Business cards, flyers & digital kits.</li>
+      <li>Client Onboarding Kit – Loom videos, SOPs & tech-stack guide.</li>
+      <li>10–14 Day Delivery with 3 rounds of revisions.</li>
+    </ul>
+    <p class="card-note">
+      Ideal for entrepreneurs scaling toward a hands-off backend with a brand that speaks authority.
+    </p>
+    <a href="#start" class="btn card-cta">Book This Build</a>
+    <a href="#learn-stack" class="btn learn-more">Learn More</a>
+  </div>
+</div>
+
+
+    <p class="closing-line">
+      This isn’t about pretty pages. It’s about presence, performance, and peace of mind.<br/>
+      Choose the system that matches the level you’re stepping into.
+    </p>
+  </div>
+</section>
+<section class="process-section" id="process">
+  <!-- Background Image -->
+  <div class="bg-wrapper">
+    <img
+      src="images/silk2.webp"
+      alt=""
+      aria-hidden="true"
+      class="process-bg"
+    />
+  </div>
+
+  <!-- Frosted-glass content box -->
+  <div class="translucent-box">
+    <div class="container">
+      <h2 class="section-title">Built for Clarity. Delivered in Days.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <img src="images/search.svg" alt="" class="step-icon"/>
+          <h3>1. Discovery</h3>
+          <p>We assess your brand, audience, and goals to map out the levers that move the needle.</p>
+        </div>
+        <div class="step">
+          <img src="images/preveiw.svg" alt="" class="step-icon"/>
+          <h3>2. Preview</h3>
+          <p>You receive a tailored design sample so you can see exactly how your system will look—and work.</p>
+        </div>
+        <div class="step">
+          <img src="images/build.svg" alt="" class="step-icon"/>
+          <h3>3. Build</h3>
+          <p>In just 7–10 days, we implement your full infrastructure: site, booking flow, tools, and more.</p>
+        </div>
+        <div class="step">
+          <img src="images/scale.svg" alt="" class="step-icon"/>
+          <h3>4. Scale</h3>
+          <p>With clean systems in place, you delegate confidently and watch your brand grow—without the chaos.</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <a href="#preview" class="btn">Request a Free Preview</a>
+      </div>
     </div>
-    <textarea class="form-input" name="message" placeholder="What do you need built?" rows="5" required></textarea>
-    <button type="submit" class="form-submit">Submit Inquiry</button>
-  </form>
-  
+  </div>
+</section>
 
-  <p class="form-note">* You’ll get a response within 24–48 hours.</p>
+<section class="portfolio-section" id="portfolio">
+  <div class="container">
+    <h2 class="section-title">Systems We’ve Built</h2>
+    <p class="section-subhead">
+      A snapshot of high-performing brands powered by Pinnacle infrastructure.
+    </p>
+
+    <div class="cards-grid">
+      <!-- Card 1 -->
+      <div class="portfolio-card fade-up">
+        <img
+          src="images/6.svg"
+          alt="Jaxon Development site"
+          class="card-img"
+        />
+        <h3 class="card-name">Jaxon Development</h3>
+        <p class="card-result">$12K project closed within 2 weeks of launch.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="portfolio-card fade-up" style="transition-delay: 0.15s">
+        <img
+          src="images/5.svg"
+          alt="Orionis Interiors site"
+          class="card-img"
+        />
+        <h3 class="card-name">Orionis Interiors</h3>
+        <p class="card-result">35% month-over-month lead increase.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="portfolio-card fade-up" style="transition-delay: 0.3s">
+        <img
+          src="images/4.svg"
+          alt="Etheron Solar site"
+          class="card-img"
+        />
+        <h3 class="card-name">Etheron Solar</h3>
+        <p class="card-result">4× ROI on ad spend in 30 days.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
 </section>
 
 
+<section class="founder-section" id="founder">
+  <div class="container founder-container">
+    <div class="founder-photo slide-in">
+      <img
+        src="images/preocolor.svg"
+        alt="Founder of Pinnacle Sites"
+      />
+    </div>
+    <div class="founder-bio slide-in" style="transition-delay: 0.15s">
+      <h2>Who’s Behind Pinnacle Sites?</h2>
+      <p>
+        Phelton Petit-Frere—founder of Pinnacle Sites, with roots in conversion-rate optimization
+        and high-end visual design. Early on I realized that pretty pages alone don’t
+        move the needle—systems do. So I shifted my craft toward building the pipes
+        under your brand: booking flows, VA infrastructures, content engines.
+      </p>
+      <p>
+        My mission is simple: give you back clarity, control, and peace of mind with
+        no-fluff, performance-first infrastructure that pays you back daily.
+      </p>
+    </div>
+  </div>
+  <br>
+  <br>
+</section>
+
+<!-- 7. Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="cta-title">Structure Pays You Back. Daily.</h2>
+    <p class="cta-subhead">
+      Let’s build something that removes friction and sets you apart—before your next client clicks.
+    </p>
+    <div class="cta-buttons">
+      <a href="#preview" class="btn btn-primary">Request a Free Preview</a>
+      <a href="#talk"    class="btn btn-secondary">Let’s Talk First</a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Footer -->
 <footer class="site-footer">
-  <p>© 2025 Pinnacle Sites. Built for clarity. Anchored in structure.</p>
+  <div class="container">
+    <hr class="footer-divider"/>
+    <nav class="footer-nav">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#start">Book a Call</a>
+    </nav>
+    <p class="footer-contact">
+      © 2025 Pinnacle Sites &nbsp;|&nbsp; info@pinnaclesites.com &nbsp;|&nbsp; (555) 123-4567
+    </p>
+  </div>
 </footer>
 
+
+
+  <script src="script.js"></script>
 </body>
 </html>

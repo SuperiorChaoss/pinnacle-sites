@@ -1,0 +1,867 @@
+/*────────────────────────────────────────────────────────────────────────*/
+/*  Import Premium Fonts                                                */
+/*────────────────────────────────────────────────────────────────────────*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap');
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 0. Prevent stray horizontal scroll                                      */
+/*────────────────────────────────────────────────────────────────────────*/
+html, body {
+  overflow-x: hidden;
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 1. Reset & Variables                                                   */
+/*────────────────────────────────────────────────────────────────────────*/
+:root {
+  --white: #fff;
+  --black: #000;
+  --shade: rgba(255,255,255,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* Base Typography & Colors                                               */
+/*────────────────────────────────────────────────────────────────────────*/
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--white);
+  background: var(--black);
+  line-height: 1.6;
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 2. Navbar                                                              */
+/*────────────────────────────────────────────────────────────────────────*/
+.navbar {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: saturate(180%) blur(10px);
+  z-index: 100;
+}
+.navbar .logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* Hamburger toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 24px; height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+}
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; right: 0;
+    background: var(--black);
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .nav-links.open { display: flex; }
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 3. Hero                                                                */
+/*────────────────────────────────────────────────────────────────────────*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  justify-content: center;
+  background: radial-gradient(circle at center, #222, #000 80%);
+}
+.hero > h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero .subhead {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+  .hero > h1 {
+    font-size: 2rem;
+    margin-bottom: .75rem;
+  }
+  .hero .subhead {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+  }
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 4. Scrollable Carousel                                                 */
+/*────────────────────────────────────────────────────────────────────────*/
+.hero-preview {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  gap: 1%;
+  padding-inline: 10%;
+  box-sizing: content-box;
+}
+.hero-preview::-webkit-scrollbar { display: none; }
+
+.slide {
+  flex: 0 0 30%;
+  max-width: 50%;
+  scroll-snap-align: center;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: transform .4s ease, opacity .4s ease, border .3s ease, box-shadow .3s ease;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.slide.center {
+  opacity: 1;
+  transform: scale(1);
+  border-color: var(--white);
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+.slide.side:hover {
+  opacity: 0.8;
+  transform: scale(0.9);
+}
+@media (max-width: 600px) {
+  .hero-preview { padding-inline: 5%; }
+  .slide {
+    flex: 0 0 80%;
+    max-width: 85%;
+  }
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 5. CTA                                                                 */
+/*────────────────────────────────────────────────────────────────────────*/
+.cta {
+  margin-top: 1rem;
+}
+.cta .btn {
+  display: inline-block;
+  padding: .75rem 2rem;
+  background: var(--white);
+  color: var(--black);
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform .2s ease;
+}
+.cta .btn:hover {
+  transform: translateY(-2px);
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* 6. Carousel Indicators (mobile)                                         */
+/*────────────────────────────────────────────────────────────────────────*/
+.carousel-indicators {
+  display: none;
+  margin-top: 1rem;
+  gap: .5rem;
+}
+.carousel-indicators span {
+  width: 8px; height: 8px;
+  background: var(--shade);
+  border-radius: 50%;
+  transition: background .3s;
+  cursor: pointer;
+}
+.carousel-indicators span.active { background: var(--white); }
+@media (max-width: 768px) {
+  .carousel-indicators { display: flex; justify-content: center; }
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* Pain-Points Section Background Image & Calculator                       */
+/*────────────────────────────────────────────────────────────────────────*/
+.pain-points {
+  position: relative;
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
+.pain-points .bg-wrapper {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  pointer-events: none; z-index: -1;
+}
+.pain-points .section-bg {
+  width:100%; height:100%; object-fit:cover; opacity: .15;
+  background-attachment: fixed;
+}
+
+.pain-points .section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem; font-weight: 800;
+  text-align: center; margin-bottom: .5rem;
+}
+.pain-points .question {
+  font-size: 1.1rem; font-style: italic;
+  text-align: center; margin-bottom: 2rem;
+  opacity: .8;
+}
+
+/* Glass-pane calculator */
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 1.5rem;
+  max-width: 600px; margin: 0 auto 3rem;
+  padding: 2rem;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+.calculator label {
+  display: flex; flex-direction: column;
+  font-size: .95rem; color: var(--white);
+}
+.calculator label span {
+  margin-bottom: .5rem; opacity: .85;
+}
+.calculator input {
+  padding: .5rem; font-size: 1rem; color: var(--white);
+  background: transparent; border: none;
+  border-bottom: 2px solid var(--shade);
+  border-radius: 4px; transition: border-color .3s;
+}
+.calculator input:focus {
+  outline: none;
+  border-bottom-color: var(--gold);
+}
+.calculator .result {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 1.2rem; font-weight: 700; color: var(--white);
+}
+
+/* Pain-point cards */
+.points-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+  max-width: 1000px; margin: 0 auto 3rem;
+}
+.point {
+  background: rgba(255,255,255,0.05);
+  padding: 2rem 1rem; border-radius: 8px;
+  text-align: center; transition: transform .3s ease;
+}
+.point:hover { transform: scale(1.03); }
+.point .icon {
+  width:64px; height:64px; margin-bottom:1rem;
+  filter: brightness(0) invert(1);
+  transition: transform .3s, filter .3s, box-shadow .3s;
+}
+.point:hover .icon {
+  transform: scale(1.1);
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+}
+.point h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem; font-weight: 700;
+  margin-bottom: .5rem;
+}
+.point p {
+  font-size: 1rem; opacity: .8;
+}
+.pain-points .closing-line {
+  font-style: italic; font-size: 1.05rem;
+  text-align: center; max-width: 600px;
+  margin: 0 auto 2rem; opacity: .9;
+}
+.pain-points .cta { text-align:center; }
+.pain-points .btn.primary {
+  padding: .75rem 2rem; font-weight:700;
+  border-radius:6px; background: var(--gold);
+  color: var(--black);
+}
+@media (max-width:900px) {
+  .points-grid { grid-template-columns:1fr; }
+  .pain-points { padding:4rem 1rem; }
+}
+
+/*────────────────────────────────────────────────────────────────────────*/
+/* Pinnacle Systems (Black & White)                                        */
+/*────────────────────────────────────────────────────────────────────────*/
+.pinnacle-systems {
+  background: #000; color: #fff; padding:6rem 2rem;
+}
+.pinnacle-systems .container {
+  max-width:1200px; margin:0 auto;
+}
+.pinnacle-systems .section-title {
+  font-family:'Poppins',sans-serif;
+  font-size:2.5rem; font-weight:800;
+  text-align:center; margin-bottom:.5rem;
+}
+.pinnacle-systems .tagline {
+  font-size:1.1rem; font-style:italic;
+  text-align:center; opacity:.8; margin-bottom:3rem;
+}
+/* Grid */
+.systems-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem; margin-bottom:3rem;
+}
+/* Cards */
+.card {
+  background: rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:12px;
+  padding:2rem;
+  display:flex; flex-direction:column;
+  box-shadow:0 4px 12px rgba(0,0,0,0.6);
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+  position: relative;
+}
+.card.popular {
+  border-color: #fff;
+  box-shadow:0 6px 18px rgba(0,0,0,0.8);
+}
+.card .badge {
+  position:absolute; top:-8px; right:-8px;
+  background:#fff; color:#000;
+  font-size:.75rem; font-weight:700;
+  padding:.25rem .5rem; border-radius:4px;
+}
+.card:hover {
+  transform:translateY(-8px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.75);
+  border-color:#fff;
+}
+.card-title {
+  font-family:'Poppins',sans-serif;
+  font-size:1.5rem; font-weight:700;
+  margin-bottom:.75rem;
+}
+.price {
+  font-family:'Poppins',sans-serif;
+  font-size:2.25rem; font-weight:800;
+  margin-bottom:1rem;
+}
+.features {
+  list-style:none; padding-left:0; margin-bottom:1.5rem;
+}
+.features li {
+  position:relative; padding-left:1.5rem; margin-bottom:1rem;
+}
+.features li::before {
+  content:'–'; position:absolute; left:0; color: var(--gold);
+}
+.card-note {
+  font-size:.9rem; opacity:.75; margin: .5rem 0 1.5rem;
+}
+.card-cta {
+  margin-top:auto;
+  padding:.75rem 1.5rem;
+  background:transparent;
+  border:2px solid var(--white);
+  color: var(--white);
+  font-weight:600;
+  border-radius:8px;
+  text-decoration:none;
+  text-align:center;
+  transition: background .2s, color .2s;
+}
+.card-cta:hover {
+  background: var(--white);
+  color: var(--black);
+}
+.pinnacle-systems .closing-line {
+  font-style:italic; font-size:1rem; text-align:center; opacity:.8;
+}
+@media(max-width:900px){
+  .systems-grid{grid-template-columns:1fr;}
+  .pinnacle-systems{padding:3rem 1rem;}
+}
+
+/* Flex layout so cards size to content */
+.systems-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+/* Allow cards to auto-size (min-width + flexible growth) */
+.card {
+  flex: 1 1 auto;
+  min-width: 280px;   /* smallest comfortable card */
+  max-width: 360px;   /* prevent cards from growing too wide */
+}
+
+/* Tweak spacing to match new width behavior */
+.card {
+  padding: 1.5rem 1rem;
+}
+
+/* Learn More button style */
+.btn.learn-more {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--white);
+  text-decoration: underline;
+  text-align: center;
+  transition: color .2s ease;
+}
+.btn.learn-more:hover {
+  color: var(--shade);
+}
+
+/* Ensure primary CTA still sits at bottom */
+.card-cta {
+  margin-top: auto;
+}
+
+/* ── Container & Background ── */
+.process-section {
+  position: relative;
+  overflow: hidden;
+  padding: 0; /* padding lived in the translucent-box */
+}
+.bg-wrapper {
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index: -2;
+}
+.process-bg {
+  width:100%; height:100%;
+  object-fit: cover;
+    -webkit-mask-image: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,     /* transparent at 0% (very top) */
+      rgba(0,0,0,1) 10%,    /* fade up to fully opaque by 10% down */
+      rgba(0,0,0,1) 90%,    /* remain fully opaque until 90% down */
+      rgba(0,0,0,0) 100%    /* fade back to transparent at 100% (very bottom) */
+    );
+  mask-image: 
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,1) 10%,
+      rgba(0,0,0,1) 90%,
+      rgba(0,0,0,0) 100%
+    );
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.process-section::before {
+  content: '';
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.4); /* dark overlay under the glass */
+  z-index: -1;
+  
+}
+
+/* ── Frosted-Glass Box ── */
+.translucent-box {
+  position: relative;
+  padding: 4rem 2rem;
+  
+}
+.translucent-box .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 3rem;
+  color: #fff;
+  text-align: center;
+  
+}
+
+/* ── Title ── */
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+/* ── Steps & Fade-Up ── */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.step {
+  flex: 1 1 200px;
+  max-width: 220px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.step:nth-child(1) { transition-delay: .2s; }
+.step:nth-child(2) { transition-delay: .4s; }
+.step:nth-child(3) { transition-delay: .6s; }
+.step:nth-child(4) { transition-delay: .8s; }
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icons & Text */
+.step-icon {
+  width: 200px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+.step h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: .75rem;
+}
+.step p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: .85;
+}
+
+/* ── CTA ── */
+.cta .btn {
+  display: inline-block;
+  padding: .75rem 2rem;
+  background: #fff;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+.cta .btn:hover {
+  background: #eee;
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+@media(max-width: 800px) {
+  .steps { justify-content: center; }
+  .step { max-width: 260px; }
+}
+@media(max-width: 500px) {
+  .steps { flex-direction: column; }
+  .step { margin: 0 auto; }
+}
+
+/*────────────────────────────────────────*/
+/* 5. Portfolio Section                  */
+/*────────────────────────────────────────*/
+/* 5. Portfolio Section – black to white gradient */
+.portfolio-section {
+  background: linear-gradient(
+    180deg,
+    #000 0%,
+    #000000 50%,
+    #1c1c1c 100%
+  );
+  color: #fff; /* keeps your white text readable over the dark end */
+    padding: 6rem 2rem;
+}
+
+/* 6. Founder Section – same gradient */
+.founder-section {
+  background: linear-gradient(
+    180deg,
+    #1c1c1c 0%,
+    rgb(60, 60, 60) 50%,
+    #3f3f3f 100%
+  );
+  color: #fff;
+}
+
+.portfolio-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.portfolio-section .section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.portfolio-section .section-subhead {
+  font-size: 1.1rem;
+  opacity: .8;
+  margin-bottom: 2.5rem;
+}
+
+/* 3-column grid, collapses responsively */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+}
+@media(max-width:900px) {
+  .cards-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:600px) {
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* Portfolio cards */
+.portfolio-card {
+  max-width: 100%;
+  scroll-snap-align: center;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: transform .4s ease, opacity .4s ease, border .3s ease, box-shadow .3s ease;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+.card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.card-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: -0.5rem;
+}
+.card-result {
+  font-size: 1rem;
+  margin: 0 1rem 1.5rem;
+  opacity: .8;
+}
+
+/*────────────────────────────────────────*/
+/* 6. Founder Section                    */
+/*────────────────────────────────────────*/
+.founder-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.founder-photo img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.founder-bio {
+  flex: 1 1 300px;
+}
+.founder-bio h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.founder-bio p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: .85;
+}
+
+/*────────────────────────────────────────*/
+/*  Scroll-triggered Animations          */
+/*────────────────────────────────────────*/
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.slide-in {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.visible {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+/*────────────────────────────────────────*/
+
+/*────────────────────────────────────────────────────────*/
+/* 7. Final CTA                                           */
+/*────────────────────────────────────────────────────────*/
+.final-cta {
+  background: linear-gradient(to bottom, #ffffff 0%, #232323 100%);
+  color: #000;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.final-cta .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-subhead {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #f0f0f0;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #000;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid #000;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  background: #000;
+  color: #fff;
+}
+
+/*────────────────────────────────────────────────────────*/
+/* 8. Footer                                              */
+/*────────────────────────────────────────────────────────*/
+.site-footer {
+  background: #000;
+  color: #fff;
+  padding: 2rem 2rem 3rem;
+}
+
+.site-footer .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transition: color .2s ease;
+}
+
+.footer-nav a:hover {
+  color: #e6c200;
+}
+
+.footer-contact {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-family: 'Inter', sans-serif;
+}
