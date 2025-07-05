@@ -698,36 +698,52 @@ body {
 /*────────────────────────────────────────*/
 /* 6. Founder Section                    */
 /*────────────────────────────────────────*/
+.founder-section {
+  background: #111;
+  padding: 4rem 1rem;
+}
+
 .founder-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  max-width: 900px;
+  text-align: center;
+  gap: 2rem;
+  max-width: 800px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
+
 .founder-photo img {
-  width: 240px;
-  height: 240px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 3px solid #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
+
 .founder-bio {
-  flex: 1 1 300px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: #f1f1f1;
+  width: 100%;
 }
+
 .founder-bio h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+  color: #fff;
 }
+
 .founder-bio p {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  color: #ccc;
   line-height: 1.6;
   margin-bottom: 1rem;
-  opacity: .85;
 }
+
 
 /*────────────────────────────────────────*/
 /*  Scroll-triggered Animations          */
